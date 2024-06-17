@@ -4,6 +4,8 @@ import { singleBlog } from '@/components/lib/interface';
 import Image from 'next/image';
 import { PortableText } from 'next-sanity';
 
+export const revalidate = 30; // refresh sanity data in very 30 sec
+
 async function getData(slug: string) {
     const query = `
         *[_type=='blog' && slug.current=='${slug}'] {
