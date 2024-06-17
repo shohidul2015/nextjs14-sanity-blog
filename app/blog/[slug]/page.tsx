@@ -2,6 +2,7 @@ import React from 'react';
 import {client, urlFor} from '@/components/lib/sanity'
 import { singleBlog } from '@/components/lib/interface';
 import Image from 'next/image';
+import { PortableText } from 'next-sanity';
 
 async function getData(slug: string) {
     const query = `
@@ -40,6 +41,9 @@ async function blogArticle({params} : {params: {slug: string}}) {
               priority
               className='mt-6 rounded border'
             />
+            <div className='mt-16 prose prose-blue prose-lg dark:prose-invert prose-headings:underline prose-li:marker:text-primary'>
+                <PortableText value={data.content}/>
+            </div>
     </div>
   )
 }
