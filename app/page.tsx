@@ -18,6 +18,7 @@ async function getData() {
     description,
     "currentSlug": slug.current,
     titleImage,
+    content,
   } `;
 
   const data = client.fetch(query);
